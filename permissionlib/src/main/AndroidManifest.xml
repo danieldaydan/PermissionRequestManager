@@ -2,7 +2,7 @@
     package="vip.danielday.permissionlib" >
     <application>
         <activity
-            android:name="vip.danielday.permissionlib.vip.danielday.permissionrequest.PermissionRequestActivity"
+            android:name="vip.danielday.permissionrequest.PermissionRequestActivity"
             android:screenOrientation="portrait"
             android:theme="@style/translucent" />
     </application>
