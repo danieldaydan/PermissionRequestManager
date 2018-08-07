@@ -7,6 +7,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Handler;
 import android.os.IBinder;
+import android.view.WindowManager;
 import android.widget.Toast;
 
 
@@ -82,7 +83,7 @@ public class PermissionService extends Service {
                     }
                 }
                 builder.append("权限被禁止，需要手动打开");
-                new AlertDialog.Builder(getBaseContext())
+                AlertDialog dialog=  new AlertDialog.Builder(getBaseContext())
                         .setTitle("提示")
                         .setMessage(builder)
                         .setPositiveButton("去设置", new DialogInterface.OnClickListener() {
@@ -98,7 +99,9 @@ public class PermissionService extends Service {
                                 dialog.dismiss();
                             }
                         })
-                        .create().show();
+                        .create();
+                dialog.getWindow().setType(WindowManager.LayoutParams.TYPE_SYSTEM_ALERT);
+                dialog.show();
 
                 break;
             case 0:
